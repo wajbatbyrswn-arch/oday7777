@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كنوز الأردن</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <div id="home-screen" class="screen active">
+            <header class="main-header">
+                <h1>كنوز الأردن</h1>
+            </header>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/cTwfI4M3qXo" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="content">
+                <h2 class="welcome-title">مرحباً بك في الأردن</h2>
+                <p class="welcome-text">اكتشف سحر الأردن وتاريخه العريق من خلال هذا التطبيق. شاهد الفيديو التعريفي لتتعرف على بعض من كنوزنا، ثم انطلق في رحلة معرفية واختبر معلوماتك!</p>
+                <button id="start-btn" class="btn-primary">ابدأ الاستكشاف</button>
+            </div>
+        </div>
+
+        <div id="landmarks-screen" class="screen">
+            <header class="main-header">
+                <button class="back-btn" onclick="showScreen('home-screen')"><i class="fas fa-arrow-right"></i></button>
+                <h1>المعالم السياحية</h1>
+            </header>
+            <div class="landmarks-list">
+            </div>
+            <div class="content">
+                <button id="start-quiz-btn" class="btn-primary btn-blue">ابدأ الاختبار الآن</button>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <header class="main-header">
+                <button class="back-btn" onclick="showScreen('landmarks-screen')"><i class="fas fa-arrow-right"></i></button>
+                <h1 id="quiz-title">اختبار المعلومات (1/5)</h1>
+            </header>
+            <div class="quiz-container">
+                <div class="question-card">
+                    <h2 id="question-text"></h2>
+                </div>
+                <div id="options-container" class="options-list">
+                </div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <header class="main-header">
+                <h1>النتيجة النهائية</h1>
+            </header>
+            <div class="result-container">
+                <i class="fas fa-trophy trophy-icon"></i>
+                <h2 class="result-title">لقد أتممت الاختبار!</h2>
+                <p class="result-subtitle">نتيجتك هي:</p>
+                <div class="score-display">
+                    <span class="score-total">5</span> / <span id="score-value" class="score-number">0</span>
+                </div>
+                
+                <div class="rating-section">
+                    <p>ما تقييمك للتطبيق؟</p>
+                    <div class="stars">
+                        <i class="fas fa-star" data-value="1"></i>
+                        <i class="fas fa-star" data-value="2"></i>
+                        <i class="fas fa-star" data-value="3"></i>
+                        <i class="fas fa-star" data-value="4"></i>
+                        <i class="fas fa-star" data-value="5"></i>
+                    </div>
+                </div>
+
+                <button class="btn-primary btn-blue" onclick="showScreen('home-screen')">العودة للرئيسية</button>
+            </div>
+        </div>
+
+        <!-- إشعار الإجابة -->
+        <div id="toast" class="toast"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
